@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Modal, Platform } from "react-native";
+import { Modal } from "react-native";
 import { ChevronDownIcon, CheckIcon } from "./lib/icons";
 import { Text } from "./text";
 import { ScrollView } from "./scroll-view";

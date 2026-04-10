@@ -1,22 +1,15 @@
 import * as React from "react";
-import BottomSheet, {
+import {
   BottomSheetModal,
-  BottomSheetModalProvider,
   BottomSheetView,
   BottomSheetBackdrop,
 } from "@gorhom/bottom-sheet";
-import { View, Pressable, useWindowDimensions, Modal, Platform } from "react-native";
+import { View, Pressable, useWindowDimensions, Platform } from "react-native";
 import { cn } from "./utils/cn";
 import { X } from "lucide-react-native";
 import { iconWithClassName } from "./lib/icons/icon-with-classname";
 
 const XIcon = iconWithClassName(X);
-
-interface SheetProps {
-  children: React.ReactNode;
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
-}
 
 const Sheet = ({ children, open = false, onOpenChange = () => {} }: { 
   children: React.ReactNode;
