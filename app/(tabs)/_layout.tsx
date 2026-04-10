@@ -17,10 +17,9 @@ export default function TabLayout() {
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
+        tabBarLabelPosition: "below-icon",
         tabBarLabelStyle: Platform.select({
-          web: {
-            lineHeight: 20,
-          },
+          web: { overflow: "visible" },
           default: {},
         }),
         tabBarStyle: Platform.select({
