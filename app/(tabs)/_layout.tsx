@@ -17,13 +17,17 @@ export default function TabLayout() {
         headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
+        tabBarLabelStyle: Platform.select({
+          web: {
+            lineHeight: 20,
+          },
+          default: {},
+        }),
         tabBarStyle: Platform.select({
           ios: {
             position: "absolute",
           },
-          default: {
-            paddingBottom: 4,
-          },
+          default: {},
         }),
       }}
     >
