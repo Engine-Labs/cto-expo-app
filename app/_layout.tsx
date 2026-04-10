@@ -13,7 +13,16 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { ThemeProvider as UIThemeProvider } from '@/components/ui/theme';
 
-const convex = new ConvexReactClient(process.env.EXPO_PUBLIC_CONVEX_URL!);
+const getConvexUrl = () => {
+  const url = process.env.EXPO_PUBLIC_CONVEX_URL;
+  if (!url) {
+    console.warn("EXPO_PUBLIC_CONVEX_URL is not set — Convex will not connect until .env.local is configured and the dev server is restarted.");
+    return "https://placeholder.convex.cloud";
+  }
+  return url;
+};
+
+const convex = new ConvexReactClient(getConvexUrl());
 
 SplashScreen.preventAutoHideAsync();
 
